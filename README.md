@@ -2,7 +2,7 @@
 
 An end-to-end R workflow for analyzing a real randomized email experiment using the Hillstrom MineThatData Email Analytics Challenge dataset.
 
-**Rendered analysis report:** 
+**Rendered analysis report:**  
 [https://carlos-orellana-heredia.github.io/hillstrom-email-experiment/](https://carlos-orellana-heredia.github.io/hillstrom-email-experiment/)
 
 ## Analytical question
