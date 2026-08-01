@@ -152,6 +152,59 @@ kable(
 knitr::include_graphics("outputs/conversion_by_assignment.png")
 ```
 
+# Experiment planning: power and MDE
+
+This section uses the no-email conversion rate as a planning baseline. It reports the sample size needed to detect selected absolute conversion lifts with 80% power and the minimum detectable effect (MDE) for the approximately equal-sized primary comparison.
+
+```{r sample-size-scenarios}
+sample_size <- read_csv(
+  "outputs/conversion_sample_size_scenarios.csv",
+  show_col_types = FALSE
+)
+
+kable(
+  sample_size %>%
+    transmute(
+      `Control conversion rate` = scales::percent(
+        control_conversion_rate,
+        accuracy = 0.01
+      ),
+      `Absolute conversion lift` = scales::percent(
+        absolute_conversion_lift,
+        accuracy = 0.01
+      ),
+      `Required individuals per arm` = required_n_per_arm,
+      `Required total individuals` = required_total_n
+    ),
+  caption = "Sample size required for 80% power, two-sided alpha = 0.05"
+)
+```
+
+```{r mde}
+mde <- read_csv("outputs/conversion_mde.csv", show_col_types = FALSE)
+
+kable(
+  mde %>%
+    transmute(
+      `Control conversion rate` = scales::percent(
+        control_conversion_rate,
+        accuracy = 0.01
+      ),
+      `Individuals per arm` = individuals_per_arm,
+      `Target power` = "80%",
+      `Minimum detectable effect` = scales::percent(
+        minimum_detectable_effect,
+        accuracy = 0.01
+      )
+    ),
+  caption = "Minimum detectable effect for the primary comparison"
+)
+```
+
+```{r power-plot, out.width='85%', fig.align='center'}
+knitr::include_graphics("outputs/conversion_power_curve.png")
+```
+
 # Exploratory segmentation
 
 The following subgroup estimates are exploratory. They describe whether conversion lift appears to vary by pre-campaign spending category; they should not be interpreted as a production targeting rule without validation in a new experiment.
