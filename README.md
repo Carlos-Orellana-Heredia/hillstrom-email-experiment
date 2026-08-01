@@ -2,6 +2,9 @@
 
 An end-to-end R workflow for analyzing a real randomized email experiment using the Hillstrom MineThatData Email Analytics Challenge dataset.
 
+**Rendered analysis report:** 
+[https://carlos-orellana-heredia.github.io/hillstrom-email-experiment/](https://carlos-orellana-heredia.github.io/hillstrom-email-experiment/)
+
 ## Analytical question
 
 Among customers eligible for the campaign, what was the effect of the Men's email on conversion and spend over the following two weeks, compared with receiving no email?
@@ -50,7 +53,7 @@ docs/           Rendered analysis report and documentation
 ## Data source and attribution
 
 Kevin Hillstrom, *MineThatData E-Mail Analytics and Data Mining Challenge* (2008):
-https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html
+[https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html](https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html)
 
 ## Packages
 
